@@ -11,13 +11,13 @@ internal class BsbLineItemProcessorTest {
 
     @Test
     fun `hyphenated`() {
-        val processedBsb = processor.process(Bsb("803-233"))
+        val processedBsb = processor.process(ApcaBsb("803-233"))
         assertThat(processedBsb.nonHyphenated).isEqualTo("803233")
     }
 
     @Test
     fun `closed`() {
-        val processedBsb = processor.process(Bsb(
+        val processedBsb = processor.process(ApcaBsb(
                 "803-233",
                 "CRU", "Closed",
                 "Refer to BSB 803-158 09/97",
@@ -33,7 +33,7 @@ internal class BsbLineItemProcessorTest {
 
     @Test
     fun `flags as all whitespace`() {
-        val processedBsb = processor.process(Bsb(
+        val processedBsb = processor.process(ApcaBsb(
                 "803-233",
                 "CRU", "Closed",
                 "Refer to BSB 803-158 09/97",
@@ -50,7 +50,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["P", " P", " P ", "P "])
     fun `only paper allowed`(paymentFlag: String) {
-        val processedBsb = processor.process(Bsb(
+        val processedBsb = processor.process(ApcaBsb(
                 "814-999",
                 "CUA", "Credit Union Australia Ltd",
                 "175 Eagle Street",
@@ -67,7 +67,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["E", " E", " E ", "E "])
     fun `only electronic allowed`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "823-000",
                 "ENC", "AMB Endeavour Mutual Bank",
                 "59 Buckingham Street",
@@ -85,7 +85,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["H", " H", " H ", "H "])
     fun `only high value allowed`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "013-217",
                 "ANZ", "Closed",
                 "Refer to BSB 013-352 - 03/11",
@@ -104,7 +104,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["PEH", "HEP", "EHP", " P E H "])
     fun `all three payment types allowed`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "013-220",
                 "ANZ", "Bentleigh",
                 "413-415 Centre Road",
@@ -121,7 +121,7 @@ internal class BsbLineItemProcessorTest {
 
     @Test
     fun `no hyphen in hyphenated number`() {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "814999",
                 "ABC", "La la la",
                 "123",
@@ -136,7 +136,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["OWG", " *&^", " 123 "])
     fun `none of the allowed payment types`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "000-000",
                 "0", "La la la",
                 "123",
@@ -154,7 +154,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["PE", " P E", " PE ", "PE "])
     fun `paper and electronic`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "013-947",
                 "ANZ", "CBRE (V) PTY LTD ESTATE AGENCY",
                 "(NBFI Agency to 013-000)",
@@ -172,7 +172,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["PH", " P H ", " PH", "PH "])
     fun `paper and high value`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "014-033",
                 "ANZ", "Markets Division",
                 "8/324 Queen Street",
@@ -190,7 +190,7 @@ internal class BsbLineItemProcessorTest {
     @ParameterizedTest
     @ValueSource(strings = ["EH", " EH", " EH ", "EH ", " E H "])
     fun `electronic and high value`(paymentFlag: String) {
-        val inputBsb = Bsb(
+        val inputBsb = ApcaBsb(
                 "014-993",
                 "ANZ", "Lactalis Australia Pty Ltd",
                 "(NBFI Agency to 014-000)",
