@@ -16,6 +16,7 @@ repositories {
 }
 
 dependencies {
+	runtimeOnly("org.hsqldb:hsqldb")
 	implementation("org.springframework.boot:spring-boot-starter-batch")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
