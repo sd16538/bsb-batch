@@ -1,0 +1,16 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test_db
+      authentication-database: admin
+      username: admin
+      password: admin
+
+apca:
+  bsb:
+    collection: bsb
+    batchSize: 10
+    all-records: "BSBDirectoryNov19-284.csv"
+#    all-records: "BSBDirectoryNov19-284.csv.original"

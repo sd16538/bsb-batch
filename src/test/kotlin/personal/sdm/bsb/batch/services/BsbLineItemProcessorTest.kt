@@ -1,9 +1,10 @@
-package personal.sdm.bsb.batch
+package personal.sdm.bsb.batch.services
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
+import personal.sdm.bsb.batch.ApcaBsb
 
 internal class BsbLineItemProcessorTest {
 
