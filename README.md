@@ -1,5 +1,28 @@
 # BSB Directory
 
+### AusPayNet BSB FTP Overview
+> AusPayNet BSB data is now available via download from a public FTP connection. Downloadable files include a full list and an update list, both available in CSV and TXT file formats.
+> AusPayNet BSB data is generated and published at least once a month on the first business day of the month. However, it is possible that data could be generated more than once in a given calendar month.
+> 
+> #### File Naming Conventions
+> The file naming convention for the full list is comprised of the previous month and report number. An example of this is below:
+> 
+> - BSBDirectoryMay13-205.csv
+> - BSBDirectoryMay13-205.txt
+> 
+> The file naming convention for the update list is the date of the day after the last report was generated. An example of this is below (data was generated on 1 May 2013):
+> 
+> - BSB Directory Update 02May13-03Jun13.csv
+> - BSB Directory Update 02May13-03Jun13.txt
+> 
+> #### URL
+> #### Please note that this is not the address to use if you’re attempting to set up an automated FTP procedure. 
+> The BSB Data can be downloaded from the following location: `ftp://bsb.hostedftp.com/~auspaynetftp/BSB`
+> 
+> Instructions for downloading via FTP, including worked examples and file formats can be downloaded [here](http://bsb.apca.com.au/public/BSB_DB.NSF/0/72E7EB6B4734232ECA2579650017682D/$File/Downloading%20BSB%20Files%20from%20AusPayNet%20via%20FTP.pdf).
+> 
+> #### Contact
+> Should you have any questions or encounter any issues whilst downloading from the AusPayNet BSB Data FTP, please contact us at operations@auspaynet.com.au.
 
 ### Running this application
 
