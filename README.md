@@ -39,7 +39,9 @@
 
 #### TODO
 - Instead of needing BSB file as classpath resource, the application should FTP it from APCA
-- Instead of loading files only on start-up, maybe set this up as a scheduled job ?
+- Instead of loading files at scheduled intervals, maybe 
+  - provide REST endpoint to upload file?
+  - OR FTP from configured path at scheduled intervals?
 - Add creationTime and bsb file name while loading entries
 - Handle case when BSBs no longer sent in file i.e. was present originally but not sent anymore - should be deleted from Collection.
   - *Is this possible ? Or will APCA always send through all BSBs, closed ones will have empty string for PEH payment flag.*

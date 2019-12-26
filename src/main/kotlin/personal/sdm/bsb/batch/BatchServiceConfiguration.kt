@@ -26,7 +26,7 @@ class BatchServiceConfiguration(
 
     @Bean
     fun bsbFileResource(@Value("\${apca.bsb.all-records:}") allRecordsFile: String): AbstractResource {
-
+        //TODO FTP file ?
         logger.info("CSV file [$allRecordsFile]")
         return ClassPathResource(allRecordsFile)
     }
