@@ -42,13 +42,8 @@ class BatchServiceConfiguration(
                 setLineTokenizer(object : DelimitedLineTokenizer() {
                     init {
                         setNames(*arrayOf(
-                                "hyphenatedNumber",
-                                "finInstMnemonic",
-                                "name",
-                                "street",
-                                "suburb",
-                                "state",
-                                "postCode",
+                                "hyphenatedNumber", "finInstMnemonic", "name",
+                                "street", "suburb", "state", "postCode",
                                 "paymentFlags"))
                     }
                 })

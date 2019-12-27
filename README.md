@@ -36,6 +36,9 @@
 - Start application `./gradlew bootRun`
 - This will read contents of BSB file and load them into MongoDB collection. 
   - `all-records: "BSBDirectoryNov19-284.csv.original"` Points to classpath file resource that has *all* BSB details
+- You can now lookup BSBs
+  - all `http://localhost:8080/bsb` 
+  - specific `http://localhost:8080/bsb/182-182` 
 
 #### TODO
 - Instead of needing BSB file as classpath resource, the application should FTP it from APCA
@@ -44,7 +47,7 @@
   - OR FTP from configured path at scheduled intervals?
 - Add creationTime and bsb file name while loading entries
 - Handle case when BSBs no longer sent in file i.e. was present originally but not sent anymore - should be deleted from Collection.
-  - *Is this possible ? Or will APCA always send through all BSBs, closed ones will have empty string for PEH payment flag.*
+  - *Is this even possible ? Or will APCA always send through all BSBs, closed ones will have empty string for PEH payment flag.*
 
 ### Reference Documentation and Guides
 The following guides illustrate how to use some features concretely:

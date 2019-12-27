@@ -1,7 +1,7 @@
 package personal.sdm.bsb.batch.services
 
 import org.springframework.batch.item.ItemProcessor
-import org.springframework.data.mongodb.repository.MongoRepository
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository
 import org.springframework.stereotype.Service
 import personal.sdm.bsb.batch.ApcaBsb
 import personal.sdm.bsb.batch.Bsb
@@ -33,4 +33,4 @@ class BsbLineItemProcessor : ItemProcessor<ApcaBsb, Bsb> {
     }
 }
 
-interface BsbRepository : MongoRepository<Bsb, String>
+interface BsbRepository : ReactiveMongoRepository<Bsb, String>
